@@ -1,0 +1,74 @@
+ .let{color: white; size: 40px; display: flex;justify-content: space-between;align-content: center;margin-right: 40px;}
+ .white{color: #ffffff;}
+ .clock{color: yellow;}
+ .head{ display: flex; justify-content: space-between;}
+ .hero_img {
+    width: 100%;
+    aspect-ratio: 16 / 9 ;
+    object-fit: cover;
+}
+.sale{ align-content: center;color: #e65100;}
+a {text-decoration: none;}
+.centre{align-items: center;}
+body{background-color: rgb(251, 249, 199);}
+h2{color: black;margin-left: auto;}
+.footer {
+  background-color: #cba135;
+  color: #fff;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: yellow;
+}
+
+.footer h5, .footer h6 {
+  margin-bottom: 15px;
+}
+.red{color: #e65100;}
+
+.category-bar {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    position: sticky;
+    top: 70px; /* below navbar */
+    z-index: 1000;
+}
+
+.category-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-btn {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.category-btn:hover {
+    background-color: #cba135;
+    color: white;
+    border-color: #cba135;
+}
+
+.category-btn.active {
+    background-color: #cba135;
+    color: white;
+    border-color: #cba135;
+}
