@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/style.css">
 
 <body>
- <!-- nav bar -->
+    <!-- nav bar -->
     <nav class="nav navbar navbar-expand-lg sticky-top" style="background-color: #cba135;">
         <div class="container-fluid">
             <a class="let head navbar-brand"><b><span class="white">Camping</span> <span class="clock">o'clock</span>
@@ -98,59 +98,65 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <!-- SCRIPT -->
-    <script>
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+<script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let membership = JSON.parse(localStorage.getItem("membership"));
 
-        /* SHOW ORDER SUMMARY */
-        function loadCheckout() {
-            let container = document.getElementById("order-summary");
-            container.innerHTML = "";
-
-            let total = 0;
-
-            if (cart.length === 0) {
-                container.innerHTML = "<p>Your cart is empty.</p>";
-                document.getElementById("total").innerText = 0;
-                return;
-            }
-
+    /* SHOW ORDER SUMMARY */
+    function loadCheckout() {
+        let container = document.getElementById("order-summary");
+        container.innerHTML = "";
+        let total = 0;
+        if (cart.length > 0) {
             cart.forEach(item => {
                 total += item.price * item.quantity;
-
                 container.innerHTML += `
-        <div class="d-flex justify-content-between border-bottom py-2">
-            <div>
-                <b>${item.name}</b> x ${item.quantity}
-            </div>
-            <div>$${item.price * item.quantity}</div>
-        </div>
-        `;
+                    <div class="d-flex justify-content-between border-bottom py-2">
+                        <div><b>${item.name}</b> x ${item.quantity}</div>
+                        <div>$${(item.price * item.quantity).toFixed(2)}</div>
+                    </div>
+                `;
             });
-
-            document.getElementById("total").innerText = total;
         }
 
-        /* PLACE ORDER */
-        function placeOrder(e) {
-            e.preventDefault();
-
-            if (cart.length === 0) {
-                alert("Your cart is empty!");
-                return;
-            }
-
-            alert("Order placed successfully! 🎉");
-
-            // clear cart
-            localStorage.removeItem("cart");
-
-            // redirect
-            window.location.href = "index.html";
+        if (membership) {
+            total += membership.price;
+            container.innerHTML += `
+                <div class="d-flex justify-content-between border-bottom py-2">
+                    <div><b>Membership:</b> ${membership.name}</div>
+                    <div>$${membership.price.toFixed(2)}</div>
+                </div>
+            `;
         }
 
-        loadCheckout();
-    </script>
+        if (cart.length === 0 && !membership) {
+            container.innerHTML = "<p>Your cart is empty.</p>";
+        }
 
+        document.getElementById("total").innerText = total.toFixed(2);
+    }
+
+    /* PLACE ORDER */
+    function placeOrder(e) {
+        e.preventDefault();
+
+        if (cart.length === 0 && !membership) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        alert("Order placed successfully! 🎉");
+
+        localStorage.removeItem("cart");
+        localStorage.removeItem("membership");
+
+        // Redirect 
+        window.location.href = "index.html";
+    }
+
+    // Run on page load
+    loadCheckout();
+</script>
 
 </body>
 

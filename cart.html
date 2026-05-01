@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/style.css">
 
 <body>
-   <!-- nav bar -->
+    <!-- nav bar -->
     <nav class="nav navbar navbar-expand-lg sticky-top" style="background-color: #cba135;">
         <div class="container-fluid">
             <a class="let head navbar-brand"><b><span class="white">Camping</span> <span class="clock">o'clock</span>
@@ -55,8 +55,66 @@
             <a href="checkout.html"><button class="btn btn-success w-100">Checkout</button></a>
         </div>
     </div>
+    <!-- Membership -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-5">Membership Plans</h2>
 
-   <!-- Footer -->
+        <div class="row">
+
+            <!-- BASIC -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center p-4 shadow">
+                    <h3>Basic Explorer</h3>
+                    <h1 class="my-3">Free</h1>
+                    <p>Save favorites</p>
+                    <p>Order tracking</p>
+                    <p>Fast checkout</p>
+
+                    <button class="btn btn-outline-warning" onclick="selectMembership('Basic Explorer', 0)">
+                        Join Free
+                    </button>
+                </div>
+            </div>
+
+            <!-- PLUS -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center p-4 shadow border-warning">
+                    <h3>Adventure Plus</h3>
+                    <h1 class="my-3">$4.99</h1>
+                    <p>5% discount</p>
+                    <p>Early sales access</p>
+                    <p>Birthday coupon</p>
+
+                    <button class="btn btn-warning" onclick="selectMembership('Adventure Plus', 4.99)">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRO -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center p-4 shadow">
+                    <h3>Pro Camper</h3>
+                    <h1 class="my-3">$9.99</h1>
+                    <p>10% discount</p>
+                    <p>Free shipping</p>
+                    <p>VIP support</p>
+
+                    <button class="btn btn-dark" onclick="selectMembership('Pro Camper', 9.99)">
+                        Go Premium
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Selected Membership -->
+        <div class="text-center mt-3">
+            <h5>Selected Membership:</h5>
+            <span id="selected-membership">None</span>
+        </div>
+    </div>
+    <!-- Footer -->
     <footer class="footer mt-5">
         <div class="container py-5">
             <div class="row">
@@ -105,17 +163,13 @@
     <!-- SCRIPT -->
     <script>
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let membership = JSON.parse(localStorage.getItem("membership")) || null;
 
         /* UPDATE CART BADGE */
         function updateCartCount() {
             let totalItems = 0;
-
-            cart.forEach(item => {
-                totalItems += item.quantity;
-            });
-
+            cart.forEach(item => totalItems += item.quantity);
             let badge = document.getElementById("cart-count");
-
             if (badge) {
                 badge.innerText = totalItems;
                 badge.style.display = totalItems === 0 ? "none" : "inline-block";
@@ -126,68 +180,68 @@
         function displayCart() {
             let container = document.getElementById("cart-items");
             container.innerHTML = "";
-
             let total = 0;
 
+            // Display Products
             if (cart.length === 0) {
                 container.innerHTML = "<p>Your cart is empty.</p>";
-                document.getElementById("total").innerText = 0;
-                updateCartCount();
-                return;
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price * item.quantity;
+                    container.innerHTML += `
+                    <div class="card mb-3">
+                        <div class="row g-0 align-items-center p-2">
+                            <div class="col-md-3"><img src="${item.image}" class="img-fluid" style="max-height: 80px;"></div>
+                            <div class="col-md-4"><h5>${item.name}</h5><p>$${item.price}</p></div>
+                            <div class="col-md-2"><input type="number" min="1" value="${item.quantity}" class="form-control" onchange="updateQuantity(${index}, this.value)"></div>
+                            <div class="col-md-3 text-center"><button class="btn btn-danger" onclick="removeItem(${index})">Remove</button></div>
+                        </div>
+                    </div>`;
+                });
             }
 
-            cart.forEach((item, index) => {
-                total += item.price * item.quantity;
+            // Display Membership if exists
+            const membershipDiv = document.getElementById("selected-membership");
+            if (membership) {
+                total += membership.price;
+                membershipDiv.innerHTML = `
+                <div class="alert alert-warning d-flex justify-content-between align-items-center">
+                    <span><b>Membership:</b> ${membership.name} ($${membership.price})</span>
+                    <button class="btn btn-sm btn-outline-danger" onclick="removeMembership()">Remove</button>
+                </div>`;
+            } else {
+                membershipDiv.innerHTML = "None";
+            }
 
-                container.innerHTML += `
-        <div class="card mb-3">
-            <div class="row g-0 align-items-center">
-                <div class="col-md-3">
-                    <img src="${item.image}" class="img-fluid">
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card-body">
-                        <h5>${item.name}</h5>
-                        <p>$${item.price}</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <input type="number" min="1" value="${item.quantity}" 
-                        class="form-control"
-                        onchange="updateQuantity(${index}, this.value)">
-                </div>
-
-                <div class="col-md-3 text-center">
-                    <button class="btn btn-danger" onclick="removeItem(${index})">
-                        Remove
-                    </button>
-                </div>
-            </div>
-        </div>
-        `;
-            });
-
-            document.getElementById("total").innerText = total;
+            document.getElementById("total").innerText = total.toFixed(2);
             updateCartCount();
         }
 
-        /* UPDATE QUANTITY */
+        function removeMembership() {
+            localStorage.removeItem("membership");
+            membership = null;
+            displayCart();
+        }
+
+        function selectMembership(name, price) {
+            membership = { name: name, price: price };
+            localStorage.setItem("membership", JSON.stringify(membership));
+            displayCart();
+        }
+
+        // Standard cart functions
         function updateQuantity(index, qty) {
             cart[index].quantity = parseInt(qty);
             localStorage.setItem("cart", JSON.stringify(cart));
             displayCart();
         }
 
-        // / *REMOVE ITEM */
         function removeItem(index) {
             cart.splice(index, 1);
             localStorage.setItem("cart", JSON.stringify(cart));
             displayCart();
         }
 
-        /* LOAD PAGE */
         displayCart();
     </script>
 </body>
