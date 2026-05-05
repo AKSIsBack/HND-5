@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    <!-- booststrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- css link -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<!-- booststrap css link -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<!-- css link -->
-<link rel="stylesheet" href="css/style.css">
 
 <body>
     <!-- nav bar -->
@@ -33,13 +34,12 @@
                     <a class="let nav-link" href="sale.html"><b>Sale</b></a>
                     <a class="let nav-link" href="contact.html"><b>Contact</b></a>
                     <a class="let nav-link" href="login.html"><b>Login</b></a>
-                    <a class="nav-link" href="cart.html"><button type="button" class="btn btn-outline-light">Your cart
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-cart3" viewBox="0 0 16 16">
-                                <path
-                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                            </svg>
-                        </button>
+                    <a class="nav-link btn btn-outline-light" href="cart.html">Your cart
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cart3" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -49,13 +49,13 @@
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/pic/pic1.jpg" class="hero_img d-block w-100" alt="Camping Picture">
+                <img src="pic/pic1.jpg" class="hero_img d-block w-100" alt="Camping Picture">
             </div>
             <div class="carousel-item">
-                <img src="/pic/pic2.jpg" class="hero_img w-100" alt="Camping Picture">
+                <img src="pic/pic2.jpg" class="hero_img w-100" alt="Camping Picture">
             </div>
             <div class="carousel-item">
-                <img src="/pic/pic3.jpg" class="hero_img w-100" alt="Camping Picture">
+                <img src="pic/pic3.jpg" class="hero_img w-100" alt="Camping Picture">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -73,9 +73,9 @@
         <div class="row mb-3">
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/fire4.jpg" class="card-img-top card-img" alt="MOBI GARDEN Stove">
+                    <img src="pic/fire4.jpg" class="card-img-top card-img" alt="MOBI GARDEN Stove">
                     <div class="card-body">
-                        <h5 class="card-title">MOBI GARDEN</h5>
+                        <div class="card-title h5">MOBI GARDEN</div>
                         <p class="card-text">Mini Lightweight Titanium Cookware Outdoor Kitchen</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Mobi Garden Stove', 95, '/pic/fire4.jpg')"><del
@@ -89,9 +89,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/light2.jpg" class="card-img-top card-img" alt="Flashlight">
+                    <img src="pic/light2.jpg" class="card-img-top card-img" alt="Flashlight">
                     <div class="card-body">
-                        <h5 class="card-title">Flashlight</h5>
+                        <div class="card-title h5">Flashlight</div>
                         <p class="card-text">Mini Telescopic Zoom Flashlight 3 Light Mode Torch USB Rechargable</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Flashlight', 13, '/pic/light2.jpg')">13 $</a>
@@ -100,9 +100,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/tent2.jpg" class="card-img-top card-img" alt="Shang JU Tent">
+                    <img src="pic/tent2.jpg" class="card-img-top card-img" alt="Shang JU Tent">
                     <div class="card-body">
-                        <h5 class="card-title">Shang JU</h5>
+                        <div class="card-title h5">Shang JU</div>
                         <p class="card-text">Camping tent Automatic double waterproof pop-up tent</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Shang Ju Tent', 80, '/pic/tent2.jpg')">80 $</a>
@@ -111,9 +111,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/chair2.jpg" class="card-img-top card-img" alt="Champing Chair">
+                    <img src="pic/chair2.jpg" class="card-img-top card-img" alt="Champing Chair">
                     <div class="card-body">
-                        <h5 class="card-title">Chair</h5>
+                        <div class="card-title h5">Chair</div>
                         <p class="card-text">Heavy Duty Outdoor Folding Portable Camping Chair</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Camping Chair', 20, '/pic/chair2.jpg')">20 $</a>
@@ -124,9 +124,9 @@
         <div class="row mb-3">
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/light1.jpg" class="card-img-top card-img" alt="Solar Lantern">
+                    <img src="pic/light1.jpg" class="card-img-top card-img" alt="Solar Lantern">
                     <div class="card-body">
-                        <h5 class="card-title">Lantern</h5>
+                        <div class="card-title h5">Lantern</div>
                         <p class="card-text">Solar Powered Camping Lantern Outdoor Hanging Light</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Solar Lantern', 5.99, '/pic/light1.jpg')">5.99 $</a>
@@ -135,9 +135,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/tent5.jpg" class="card-img-top card-img" alt="MOUNTAINHIKER Tent">
+                    <img src="pic/tent5.jpg" class="card-img-top card-img" alt="MOUNTAINHIKER Tent">
                     <div class="card-body">
-                        <h5 class="card-title">MOUNTAINHIKER</h5>
+                        <div class="card-title h5">MOUNTAINHIKER</div>
                         <p class="card-text">MOUNTAINHIKER Khemah camping tent/ 2 room double layer</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('MOUNTAINHIKER Tent', 250, '/pic/tent5.jpg')">250 $</a>
@@ -146,9 +146,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/tent6.jpg" class="card-img-top card-img" alt="BEIANLANG Tent">
+                    <img src="pic/tent6.jpg" class="card-img-top card-img" alt="BEIANLANG Tent">
                     <div class="card-body">
-                        <h5 class="card-title">BEIANLANG</h5>
+                        <div class="card-title h5">BEIANLANG</div>
                         <p class="card-text">BEIANLANG | Automatic Pop-Up Portable Outdoor Tent</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('BEIANLANG Tent', 45, '/pic/tent6.jpg')"><del class="me-2 text-danger">90
@@ -161,9 +161,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/fire3.jpg" class="card-img-top card-img" alt="BSWOLF Stove">
+                    <img src="pic/fire3.jpg" class="card-img-top card-img" alt="BSWOLF Stove">
                     <div class="card-body">
-                        <h5 class="card-title">BSWOLF</h5>
+                        <div class="card-title h5">BSWOLF</div>
                         <p class="card-text">Split Type Portable Camping Stove Very Easy to use New Design</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('BSWOLF Stove', 26, '/pic/fire3.jpg')"><del class="me-2 text-danger">52
@@ -182,9 +182,9 @@
         <div class="row mb-3">
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/bed1.jpg" class="card-img-top card-img" alt="Sleeping Bed">
+                    <img src="pic/bed1.jpg" class="card-img-top card-img" alt="Sleeping Bed">
                     <div class="card-body">
-                        <h5 class="card-title">Sleeping Bed</h5>
+                        <div class="card-title h5">Sleeping Bed</div>
                         <p class="card-text">ADULT SLEEPING BAG PERFECT FOR MOUNTAIN CLIMBING, CAMPING,</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Sleeping Bed', 15, '/pic/bed1.jpg')">15 $</a>
@@ -193,9 +193,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/light1.jpg" class="card-img-top card-img" alt="Solar Lantern">
+                    <img src="pic/light1.jpg" class="card-img-top card-img" alt="Solar Lantern">
                     <div class="card-body">
-                        <h5 class="card-title">Lantern</h5>
+                        <div class="card-title h5">Lantern</div>
                         <p class="card-text">Solar Powered Camping Lantern Outdoor Hanging Light</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Solar Lantern', 5.99, '/pic/light1.jpg')">5.99 $</a>
@@ -204,9 +204,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/tent7.jpg" class="card-img-top card-img" alt="ROMADA Tent">
+                    <img src="pic/tent7.jpg" class="card-img-top card-img" alt="ROMADA Tent">
                     <div class="card-body">
-                        <h5 class="card-title">ROMADA</h5>
+                        <div class="card-title h5">ROMADA</div>
                         <p class="card-text"> Automatic Foldable Sun-proof Waterproof Mosquito-repellent</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('ROMADA Tent', 40, '/pic/tent7.jpg')"><del class="me-2 text-danger">80
@@ -219,9 +219,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/bed4.jpg" class="card-img-top card-img" alt="MOBI GARDEN Bed">
+                    <img src="pic/bed4.jpg" class="card-img-top card-img" alt="MOBI GARDEN Bed">
                     <div class="card-body">
-                        <h5 class="card-title">MOBI GARDEN</h5>
+                        <div class="card-title h5">MOBI GARDEN</div>
                         <p class="card-text">Camping Sleeping Bag Portable Travel Outdoor Hiking Office</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('MOBI GARDEN Bed', 56, '/pic/bed4.jpg')"><del class="me-2 text-danger">80
@@ -236,9 +236,9 @@
         <div class="row mb-3">
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/fire3.jpg" class="card-img-top card-img" alt="BSWOLF Stove">
+                    <img src="pic/fire3.jpg" class="card-img-top card-img" alt="BSWOLF Stove">
                     <div class="card-body">
-                        <h5 class="card-title">BSWOLF</h5>
+                        <div class="card-title h5">BSWOLF</div>
                         <p class="card-text">Split Type Portable Camping Stove Very Easy to use New Design</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('BSWOLF Stove', 26, '/pic/fire3.jpg')"><del class="me-2 text-danger">52
@@ -251,9 +251,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/light5.jpg" class="card-img-top card-img" alt="Philips Flashlight">
+                    <img src="pic/light5.jpg" class="card-img-top card-img" alt="Philips Flashlight">
                     <div class="card-body">
-                        <h5 class="card-title">Philips</h5>
+                        <div class="card-title h5">Philips</div>
                         <p class="card-text">LED Flashlights for Defensa Personal Self Defense Camping Hiking</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Philips Flashlight', 24, '/pic/light5.jpg')"><del
@@ -266,9 +266,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/tent8.jpg" class="card-img-top card-img" alt="MOUNTAINHIKER Tent">
+                    <img src="pic/tent8.jpg" class="card-img-top card-img" alt="MOUNTAINHIKER Tent">
                     <div class="card-body">
-                        <h5 class="card-title">MOUNTAINHIKER</h5>
+                        <div class="card-title h5">MOUNTAINHIKER</div>
                         <p class="card-text">outdoor family large 5/8/12 people 2 rooms double layer large tent</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('MOUNTAINHIKER Tent', 127.5, '/pic/tent8.jpg')"><del
@@ -281,9 +281,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/bag4.jpg" class="card-img-top card-img" alt="Mountain Bag">
+                    <img src="pic/bag4.jpg" class="card-img-top card-img" alt="Mountain Bag">
                     <div class="card-body">
-                        <h5 class="card-title">Mountain Bag</h5>
+                        <div class="card-title h5">Mountain Bag</div>
                         <p class="card-text"> Mountaineering Bag Climb Bag Tactical Backpacks Large Backpack </p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Mountain Bag', 34, '/pic/bag4.jpg')"><del class="me-2 text-danger">68
@@ -302,9 +302,9 @@
         <div class="row mb-3">
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/tent6.jpg" class="card-img-top card-img" alt="BEIANLANG Tent">
+                    <img src="pic/tent6.jpg" class="card-img-top card-img" alt="BEIANLANG Tent">
                     <div class="card-body">
-                        <h5 class="card-title">BEIANLANG</h5>
+                        <div class="card-title h5">BEIANLANG</div>
                         <p class="card-text">BEIANLANG | Automatic Pop-Up Portable Outdoor Tent</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('BEIANLANG Tent', 45, '/pic/tent6.jpg')"><del class="me-2 text-danger">90
@@ -317,9 +317,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/fire3.jpg" class="card-img-top card-img" alt="BSWOLF Stove">
+                    <img src="pic/fire3.jpg" class="card-img-top card-img" alt="BSWOLF Stove">
                     <div class="card-body">
-                        <h5 class="card-title">BSWOLF</h5>
+                        <div class="card-title h5">BSWOLF</div>
                         <p class="card-text">Split Type Portable Camping Stove Very Easy to use New Design</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('BSWOLF Stove', 26, '/pic/fire3.jpg')"><del class="me-2 text-danger">52
@@ -332,9 +332,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/tent7.jpg" class="card-img-top card-img" alt="ROMADA Tent">
+                    <img src="pic/tent7.jpg" class="card-img-top card-img" alt="ROMADA Tent">
                     <div class="card-body">
-                        <h5 class="card-title">ROMADA</h5>
+                        <div class="card-title h5">ROMADA</div>
                         <p class="card-text"> Automatic Foldable Sun-proof Waterproof Mosquito-repellent</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('ROMADA Tent', 40, '/pic/tent7.jpg')"><del class="me-2 text-danger">80
@@ -347,9 +347,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/bag4.jpg" class="card-img-top card-img" alt="Mountain Bag">
+                    <img src="pic/bag4.jpg" class="card-img-top card-img" alt="Mountain Bag">
                     <div class="card-body">
-                        <h5 class="card-title">Mountain Bag</h5>
+                        <div class="card-title h5">Mountain Bag</div>
                         <p class="card-text"> Mountaineering Bag Climb Bag Tactical Backpacks Large Backpack </p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Mountain Bag', 34, '/pic/bag4.jpg')"><del class="me-2 text-danger">68
@@ -364,9 +364,9 @@
         <div class="row mb-3">
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/light4.jpg" class="card-img-top card-img" alt="NatureHike Light">
+                    <img src="pic/light4.jpg" class="card-img-top card-img" alt="NatureHike Light">
                     <div class="card-body">
-                        <h5 class="card-title">NatureHike</h5>
+                        <div class="card-title h5">NatureHike</div>
                         <p class="card-text">Long Battery Life Portable Camping Light Rechargable Battery </p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('NatureHike Light', 15, '/pic/light4.jpg')"><del
@@ -379,9 +379,9 @@
             </div>
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card position-relative">
-                    <img src="/pic/acc3.jpg" class="card-img-top card-img" alt="Hiking Boots">
+                    <img src="pic/acc3.jpg" class="card-img-top card-img" alt="Hiking Boots">
                     <div class="card-body">
-                        <h5 class="card-title">Boots</h5>
+                        <div class="card-title h5">Boots</div>
                         <p class="card-text">Comfortable Warm Insulated Waterproof Outdoor Hiking Boots</p>
                         <a href="#" class="btn btn-success float-end"
                             onclick="addToCart('Hiking Boots', 43, '/pic/acc3.jpg')"><del class="me-2 text-danger">86
@@ -402,18 +402,18 @@
 
                 <!-- Brand -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="fw-bold">Camping <span class="clock">o'clock</span> <svg
+                    <div class="fw-bold h5">Camping <span class="clock">o'clock</span> <svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-clock-fill" viewBox="0 0 16 16">
                             <path
                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                        </svg></h5>
+                        </svg></div>
                     <p>Your trusted camping gear store. Explore nature with the best equipment.</p>
                 </div>
 
                 <!-- Support -->
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h6 class="fw-bold">Support</h6>
+                    <div class="fw-bold h6">Support</div>
                     <ul class="list-unstyled">
                         <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="about_us.html">About Us</a></li>
@@ -422,7 +422,7 @@
 
                 <!-- Social -->
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h6 class="fw-bold">Follow Us</h6>
+                    <div class="fw-bold h6">Follow Us</div>
                     <a href="https://www.facebook.com/" class="me-2">Facebook</a><br>
                     <a href="https://www.instagram.com/" class="me-2">Instagram</a><br>
                     <a href="https://www.tiktok.com/en/">Tiktok</a>
